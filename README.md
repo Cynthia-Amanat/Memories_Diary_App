@@ -3,11 +3,12 @@
 <b>Must Have</b>
 - Will have the ability to create a memory
 - Will be able to edit a memory 
-- will be able to delete a memory <br/>
+- will be able to delete a memory 
+<br/>
 
 <b> Can have</b>
--will have login
--will have ability to upload image
+-Will have login
+-Will have ability to upload image
 
 
 ## technologies Used 

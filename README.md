@@ -6,9 +6,9 @@
 - will be able to delete a memory 
 <br/>
 
-<b> Can have</b>
--Will have login
--Will have ability to upload image
+<b>Can have</b>
+- Will have login
+- Will have ability to upload image
 
 
 ## technologies Used 

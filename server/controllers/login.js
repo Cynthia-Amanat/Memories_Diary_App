@@ -1,10 +1,12 @@
+/** @format */
+
 import UserSchema from "../models/user.js";
 
 const login = async (req, res) => {
-  const { email, password } = req.body;
-
-  const isUser = await UserSchema.findOne({ email });
-
+  const {email, password} = req.body;
+  // console.log(email);
+  // console.log(password);
+  const isUser = await UserSchema.findOne({email});
   if (isUser) {
     if (isUser.password === password) {
       res.status(200).json({
@@ -13,7 +15,7 @@ const login = async (req, res) => {
         data: isUser,
       });
     } else {
-      res.status(400).json({
+      res.status(404).json({
         success: false,
         message: "Invalid Password",
       });
@@ -21,7 +23,7 @@ const login = async (req, res) => {
   } else {
     res.status(400).json({
       success: false,
-      message: "Ïnvalid email or No User found with this email",
+      message: "Invalid email or No User found with this email",
     });
   }
 };

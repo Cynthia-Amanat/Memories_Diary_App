@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+/** @format */
+
+// import SignUp from "./components/SignUp";
+import React from "react";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import PrivateRoute from "./privateRoute/PrivateRoute";
+import {AuthProvider} from "./context/userContext.js";
+import HomePage from "./components/homepage/HomePage";
+import Login from "./components/Login/Login";
+import SignUp from "./components/signUp/SignUp";
+import NavBar from "./components/Navbar";
+import CreateMemory from "./components/createMemoryForm/CreateMemoryForm";
+import {PostProvider} from "./context/postContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <PostProvider>
+        <div className="App">
+          <Router>
+            <NavBar />
+            <CreateMemory />
+
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <PrivateRoute>
+                    <HomePage />
+                  </PrivateRoute>
+                }
+              />
+              <Route exact path="/Login" element={<Login />} />
+              <Route exact path="/signup" element={<SignUp />} />
+            </Routes>
+          </Router>
+        </div>
+      </PostProvider>
+    </AuthProvider>
   );
 }
 

@@ -1,0 +1,45 @@
+
+.createMemoryForm{
+    background-color: rgb(232, 232, 232);
+width: 35%;
+border: 0.5px solid rgb(209, 208, 208);
+padding: 15px;
+position: fixed;
+right: 0.5%;
+transition: ease-in-out 1s;
+animation-duration: 0.4s;
+animation-name: openbox;
+}
+
+@keyframes openbox {
+    from {
+        height: 0%;
+        scale: 0%;
+    }
+
+    to {
+        height: 50%;
+        scroll-behavior: 100%;
+    }
+}
+
+.d-grid{
+    margin: 10px;
+
+}
+h3{
+ position: relative;
+ left :30%
+}
+.btn{
+    background-image: linear-gradient(#f00871, #800080);
+    border:none
+}
+.form-label{
+    padding: 5px;
+}
+
+.hide {
+    display: none;
+}
+

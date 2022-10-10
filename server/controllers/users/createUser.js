@@ -22,13 +22,14 @@ const createUser = async (req, res) => {
       }
       if (existingUser) {
         return res.status(422).json({
-          error: "User already exists.",
+          error: `User ${email} already exists`,
         });
       } else {
         const myUser = await UserSchema.create(userDetails);
         res.status(201).json({
           success: true,
           message: `user with ${myUser._id} is created`,
+          data: myUser,
         });
       }
     });

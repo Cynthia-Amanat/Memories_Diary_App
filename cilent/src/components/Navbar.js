@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom";
 import appLogo from "../logo/manifest-icon-192.png";
 const NavBar = () => {
   const [error, setError] = useState("");
-  const [display, setDisplay] = useState(false);
+
   const {user, setUser} = useAuth();
   const navigate = useNavigate();
 
@@ -42,9 +42,13 @@ const NavBar = () => {
 
   useEffect(() => {
     consistentLogin();
-  }, [user]);
+  }, []);
 
-  return (
+  return error ? (
+    <>
+      <h2>{error}</h2>
+    </>
+  ) : (
     <nav className="navbar bg-light ">
       <div className="container-fluid">
         <img src={appLogo} alt="Logo" width="50" height="40" className="d-inline-block align-text-top" />

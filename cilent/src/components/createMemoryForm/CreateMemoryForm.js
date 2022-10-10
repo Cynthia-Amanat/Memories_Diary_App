@@ -13,21 +13,25 @@ const CreateMemory = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const url = "http://localhost:8000/memory";
-    const formData = new FormData();
-    formData.append("image", image);
-    formData.append("title", title);
-    formData.append("message", message);
-    formData.append("date", date);
-    formData.append("userID", userID);
-    const request = await fetch(url, {
-      body: formData,
-      method: "POST",
-    });
+    try {
+      const url = "http://localhost:8000/memory";
+      const formData = new FormData();
+      formData.append("image", image);
+      formData.append("title", title);
+      formData.append("message", message);
+      formData.append("date", date);
+      formData.append("userID", userID);
+      const request = await fetch(url, {
+        body: formData,
+        method: "POST",
+      });
 
-    const json = await request.json();
-    if (json.success) {
-      document.getElementById("memoryForm").classList.add("hide");
+      const json = await request.json();
+      if (json.success) {
+        document.getElementById("memoryForm").classList.add("hide");
+      }
+    } catch (error) {
+      setError(error.message);
     }
   };
 

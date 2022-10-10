@@ -47,4 +47,8 @@ h3{
 #image {
 margin-left: 10px;
 }
+#Close-btn{
+    position: absolute;
+    right: 5%;
+}
 

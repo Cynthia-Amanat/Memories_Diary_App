@@ -8,6 +8,7 @@ import userRouter from "./routes/userRouter.js";
 import memoryRouter from "./routes/memoryRouter.js";
 import fs from "fs";
 import multer from "multer";
+import path from "path";
 
 const DIR = "./public/";
 const storage = multer.diskStorage({
@@ -50,6 +51,15 @@ mongoose
   .connect(process.env.MONGO_LINK)
   .then(() => console.log("database connected"))
   .catch((err) => console.log(err.message));
+
+// Serve static assets if in production
+if (process.env.NODE_ENV === "production") {
+  // set static folder
+  app.use(express.static("cilent/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 const PORT = process.env.PORT || 7000;
 

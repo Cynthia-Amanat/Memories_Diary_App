@@ -1,12 +1,8 @@
 /** @format */
 
-import {useState} from "react";
 import profileAvatar from "../../logo/img_avatar.png";
-import loadingGif from "../../logo/Loading_icon.gif";
 
 const PostCard = ({post}) => {
-  const [success, setSuccess] = useState("");
-
   const handleDelete = async (e) => {
     const url = "http://localhost:8000/memory";
 
@@ -22,15 +18,12 @@ const PostCard = ({post}) => {
       body: JSON.stringify(data),
     });
 
-    const response = await request.json();
-    if (response.success) {
-      setSuccess(response.message);
-    }
+    await request.json();
   };
   return (
     <div key={post._id}>
       <div className="myPost">
-        <img src={post.image ? `data:image/jpg;base64,${post.image}` : profileAvatar} alt="image" />
+        <img src={post.image ? `data:image/jpg;base64,${post.image}` : profileAvatar} alt={post.title} />
         <div>
           <h2>
             <b>{post.title}</b>

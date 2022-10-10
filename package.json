@@ -9,6 +9,9 @@
     "start": "nodemon server.js",
     "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --perfix cilent && npm run build --perfix cilent"
   },
+  "engines": {
+        "node": "18.1.0"
+      },
   "author": "Cynthia Amanat",
   "license": "ISC",
   "dependencies": {

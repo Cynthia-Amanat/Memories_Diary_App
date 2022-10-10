@@ -1,16 +1,13 @@
 /** @format */ import {useState} from "react";
 import {useAuth} from "../../context/userContext";
-import {useNavigate} from "react-router-dom";
 import "./createMemory.css";
 
 const CreateMemory = () => {
-  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
   const [image, setImage] = useState("");
   const [date, setDate] = useState();
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
   const {user} = useAuth();
   const userID = user._id;
 
@@ -32,12 +29,14 @@ const CreateMemory = () => {
     if (json.success) {
       document.getElementById("memoryForm").classList.add("hide");
     }
-    console.log(json);
   };
 
   return (
     <>
       <div className={`createMemoryForm hide`} id="memoryForm">
+        <button className="btn btn-primary" onClick={() => document.getElementById("memoryForm").classList.add("hide")}>
+          X
+        </button>
         <h3> Create Memory</h3>
         {error && <h2 className="errorNotification">{error}</h2>}
         <form onSubmit={handleSubmit}>
@@ -63,12 +62,12 @@ const CreateMemory = () => {
             <label htmlFor="exampleFormControlInput1" className="form-label">
               Date
             </label>
-            <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="dd/mm/yy" onChange={(e) => setDate(e.target.value)} />
+            <input type="date" className="form-control" id="exampleFormControlInput1" placeholder="YYYY/MM/DD" onChange={(e) => setDate(e.target.value)} />
           </div>
           <input type="file" name="image-upload" id="image" onChange={(e) => setImage(e.target.files[0])} />
           <div className="d-grid ">
             <button className="btn btn-primary" type="submit">
-              submit
+              Create
             </button>
           </div>
         </form>

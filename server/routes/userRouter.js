@@ -14,6 +14,6 @@ userRouter.get("/", getUser);
 userRouter.post("/login", cors(), login);
 userRouter.post("/", createUser);
 userRouter.put("/:id", updateUser);
-userRouter.delete("/:id", deleteUser);
+userRouter.delete("/", deleteUser);
 
 export default userRouter;

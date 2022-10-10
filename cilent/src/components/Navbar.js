@@ -45,12 +45,12 @@ const NavBar = () => {
   }, [user]);
 
   return (
-    <nav className="navbar bg-light">
+    <nav className="navbar bg-light ">
       <div className="container-fluid">
         <img src={appLogo} alt="Logo" width="50" height="40" className="d-inline-block align-text-top" />
-        <h1 style={{fontFamily: "Lobster"}}>Memories App</h1>
+        <h1 style={{fontFamily: "Courgette"}}>Memories App</h1>
         {user && (
-          <button className="btn btn-primary btn-lg" onClick={handleClick}>
+          <button className="btn btn-primary" onClick={handleClick}>
             {" "}
             Create Memory
           </button>
@@ -58,7 +58,7 @@ const NavBar = () => {
 
         {user && (
           <button
-            className="btn btn-primary btn-lg"
+            className="btn btn-primary"
             onClick={() => {
               localStorage.removeItem("user");
               setUser("");

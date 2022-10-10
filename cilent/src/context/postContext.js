@@ -19,12 +19,14 @@ export const PostProvider = ({children}) => {
     const url = `http://localhost:8000/memory/${user._id}`;
 
     try {
-      const response = await fetch(url);
-      const data = await response.json();
+      const request = await fetch(url);
+      const response = await request.json();
       if (response.success) {
+        setPosts(response.data);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1500);
       }
-      setPosts(data);
-      setIsLoading(false);
     } catch (error) {
       console.log(error.message);
       setError(error.message);

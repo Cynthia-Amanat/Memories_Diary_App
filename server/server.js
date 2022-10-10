@@ -36,19 +36,13 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 dotenv.config();
-// app.use(express.urlencoded({extended: false}));
 
 // My Routes
-
 app.use("/user", cors(), userRouter);
 app.use("/memory", cors(), memoryRouter);
 
 app.post("/image", upload.single("image"), (req, res, next) => {
-  // const url = req.protocol + "://" + req.get("host");
-  // const name = url + "/public/" + req.file.filename;
   const newImage = fs.readFileSync("public/" + req.file.filename);
-
-  console.log(newImage);
 });
 
 // Connect to database

@@ -4,8 +4,7 @@ import UserSchema from "../models/user.js";
 
 const login = async (req, res) => {
   const {email, password} = req.body;
-  // console.log(email);
-  // console.log(password);
+
   const isUser = await UserSchema.findOne({email});
   if (isUser) {
     if (isUser.password === password) {

@@ -11,6 +11,7 @@ import SignUp from "./components/signUp/SignUp";
 import NavBar from "./components/Navbar";
 import CreateMemory from "./components/createMemoryForm/CreateMemoryForm";
 import {PostProvider} from "./context/postContext";
+import "./app.css";
 
 function App() {
   return (

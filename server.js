@@ -9,6 +9,7 @@ import memoryRouter from "./routes/memoryRouter.js";
 import fs from "fs";
 import multer from "multer";
 import path from "path";
+import {fileURLToPath} from "url";
 
 const DIR = "./public/";
 const storage = multer.diskStorage({
@@ -57,6 +58,7 @@ if (process.env.NODE_ENV === "production") {
   // set static folder
   app.use(express.static("cilent/build"));
   app.get("*", (req, res) => {
+    const __dirname = path.dirname(fileURLToPath(import.meta.url));
     res.sendFile(path.resolve(__dirname, "cilent", "build", "index.html"));
   });
 }

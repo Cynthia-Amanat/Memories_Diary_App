@@ -1,5 +1,5 @@
 # Memories_Diary_App
-<br/>
+
 ## technologies Used 
  <img src = "https://img.shields.io/badge/NODEJS-6aa84f?style=for-the-badge&logo=Node.js&logoColor=white">   <img src = "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src = "https://img.shields.io/badge/ReactJs-61DAFB?style=for-the-badge&logo=react&logoColor=black">  <img src = "https://img.shields.io/badge/MongoDB-eeeeee?style=for-the-badge&logo=MongoDB&MongoDB=black">  <img src = "https://img.shields.io/badge/Express-1572B6?style=for-the-badge&logo=Express&Color=black">
  <br/>
@@ -11,11 +11,12 @@
 <a href ="https://immense-stream-94585.herokuapp.com/">Demo</a>
 <br/>
 
-<img  src='Image/ScreenShot(32).png' >
+<img  src='Image/login.png' >
+<img  src='Image/Signup.png' >
+<img  src='Image/HomePage.png' >
 
 
 
-```
 <b>Must Have</b>
 - Will have the ability to create a memory
 - Will have login

@@ -12,7 +12,7 @@
 <br/>
 
 <img  src='Images/login.jpg.png' >
-<img  src='Images/Signup.jpg.png' >
+<img  src='Images/signup.jpg.png' >
 <img  src='Images/HomePage.jpg.png' >
 
 

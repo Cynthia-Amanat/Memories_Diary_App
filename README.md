@@ -11,9 +11,9 @@
 <a href ="https://immense-stream-94585.herokuapp.com/">Demo</a>
 <br/>
 
-<img  src='Image/login.png' >
-<img  src='Image/Signup.png' >
-<img  src='Image/HomePage.png' >
+<img  src='Images/login.jpg' >
+<img  src='Images/Signup.jpg' >
+<img  src='Images/HomePage.jpg' >
 
 
 

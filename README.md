@@ -5,15 +5,15 @@
  <br/>
 
 ## Description
-<p>Memorize is the  diary and journal writing app. It helps you to capture your memories, moods, notes, and thoughts. You can use the Memorize app as a daily writing journal.daily events, memories, experiences, and appointments; plan life events; and protect your secret diary with Login Password The Memorize app is a life journal and memory maker.</p>
-### project structure
+<p>Memorize is the  diary and journal writing app. It helps you to capture your memories, moods, notes, and thoughts. You can use the Memorize app as a daily writing journal daily events, memories, experiences, and appointments, plan life events,and protect your secret diary with Login Password. The Memorize app is a life journal and memory maker.</p>
 
-<a href ="https://immense-stream-94585.herokuapp.com/">Demo</a>
+
+<a href ="https://immense-stream-94585.herokuapp.com/">DEMO</a>
 <br/>
 
-<img  src='Image/login.png' >
-<img  src='Image/Signup.png' >
-<img  src='Image/HomePage.png' >
+<img  src='Images/login.jpg.png' >
+<img  src='Images/signup.jpg.png' >
+<img  src='Images/HomePage.jpg.png' >
 
 
 
@@ -24,7 +24,6 @@
 <br/>
 
 <b>Can have</b>
-- Will have login
 - Will be able to edit a memory 
 - Will have ability to upload image
 ## Further Amendments to be made ?

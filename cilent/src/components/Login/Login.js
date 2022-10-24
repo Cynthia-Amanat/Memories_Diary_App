@@ -1,6 +1,6 @@
 /** @format */
 
-import React, {useRef, useState} from "react";
+import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {Link} from "react-router-dom";
 import appLogo from "../../logo/manifest-icon-192.png";
@@ -10,8 +10,6 @@ import "./Login.css";
 const Login = () => {
   const navigate = useNavigate();
   const {setUser} = useAuth();
-  // const emailRef = useRef();
-  // const passwordRef = useRef();
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,11 +17,9 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = "http://localhost:8000/user/login";
-    const data = {email, password};
     try {
       const request = await fetch(url, {
         method: "POST",
-        // mode: "no-cors",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({email, password}),
       });
@@ -36,8 +32,7 @@ const Login = () => {
         navigate("/");
       }
     } catch (error) {
-      // setError(error.message);
-      console.log(error.message);
+      setError(error.message);
     }
   };
 
@@ -64,15 +59,7 @@ const Login = () => {
               OR
               <hr className="hr" />
             </div>
-            <div className="forgetYourPassword">
-              {/* <p>
-                     Forgot Your Password ?
-                     <Link to="/forgetPassword" className="clickHere">
-                        {' '}
-                        <span>Click Here </span>{' '}
-                     </Link>{' '}
-                  </p> */}
-            </div>
+            <div className="forgetYourPassword"></div>
           </form>
         </div>
         <div className="signUpContainer">

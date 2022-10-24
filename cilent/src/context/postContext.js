@@ -35,7 +35,7 @@ export const PostProvider = ({children}) => {
 
   useEffect(() => {
     getMemories();
-  }, [posts]);
+  }, [user]);
 
   const value = {
     posts,

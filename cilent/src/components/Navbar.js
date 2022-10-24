@@ -44,15 +44,11 @@ const NavBar = () => {
     consistentLogin();
   }, []);
 
-  return error ? (
-    <>
-      <h2>{error}</h2>
-    </>
-  ) : (
+  return (
     <nav className="navbar bg-light ">
       <div className="container-fluid">
         <img src={appLogo} alt="Logo" width="50" height="40" className="d-inline-block align-text-top" />
-        <h1 style={{fontFamily: "Courgette"}}>Memories App</h1>
+        <h1 style={{fontFamily: "Courgette", paddingRight: "250px"}}>Memories App</h1>
         {user && (
           <button className="btn btn-primary" onClick={handleClick}>
             {" "}

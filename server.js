@@ -48,9 +48,16 @@ app.post("/image", upload.single("image"), (req, res, next) => {
 });
 
 // Connect to database
+
+const PORT = process.env.PORT || 7000;
 mongoose
   .connect(process.env.MONGO_LINK)
   .then(() => console.log("database connected"))
+  .then(() =>
+    app.listen(PORT, () => {
+      console.log(`Server running ${PORT}`);
+    })
+  )
   .catch((err) => console.log(err.message));
 
 // Serve static assets if in production
@@ -62,9 +69,3 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "cilent", "build", "index.html"));
   });
 }
-
-const PORT = process.env.PORT || 7000;
-
-app.listen(PORT, () => {
-  console.log(`Server running ${PORT}`);
-});

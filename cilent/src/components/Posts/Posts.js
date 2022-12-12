@@ -64,10 +64,7 @@ const Posts = () => {
             const message = "Are you Sure you want to deactivate your account? You wont be able to recover the data";
 
             if (window.confirm(message)) {
-              console.log("delete User checking");
               deleteUser();
-            } else {
-              console.log("do Nothing");
             }
           }}
         >

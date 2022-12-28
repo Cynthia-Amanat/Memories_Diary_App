@@ -55,6 +55,7 @@ mongoose
   .then(() => console.log("database connected"))
   .then(() =>
     app.listen(PORT, () => {
+      console.log(path.dirname(fileURLToPath(import.meta.url)))
       console.log(`Server running ${PORT}`);
     })
   )
